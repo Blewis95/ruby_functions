@@ -17,4 +17,8 @@ class TestAddition < Minitest::Test
 	def test_string_addition
 		assert_equal("Hello World",add("Hello ", "World"))
 	end
+
+	def test_negative_numbers
+		assert_equal(6,add(-4,10))
+	end
 end
