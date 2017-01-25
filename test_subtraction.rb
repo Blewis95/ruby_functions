@@ -14,10 +14,9 @@ class TestSubtraction < Minitest::Test
 		assert_equal(4.5,subtract(7,2.5))
 	end
 
-	# => FAILED
-	# def test_string_subtraction
-	# 	assert_equal("Hell",subtract("Hello ", "o "))
-	# end
+	def test_string_subtraction
+		assert_equal("Please enter 2 NUMBERS! and try again",subtract("Hello ", "o "))
+	end
 
 	def test_negative_numbers
 		assert_equal(14,subtract(10,-4))
