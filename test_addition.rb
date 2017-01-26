@@ -21,4 +21,20 @@ class TestAddition < Minitest::Test
 	def test_negative_numbers
 		assert_equal(6,add(-4,10))
 	end
+
+	def test_3_numbers
+		assert_equal(3,add(1,1,1))
+	end
+
+	def test_string_and_num
+		assert_equal("Error", add("Hello", 42))
+	end
+
+	def test_no_arguments_returns_error
+		assert_equal("Error", add())
+	end
+
+	def test_mixed_arguments_returns_error
+		assert_equal("Error", add(1,2,3,"GabeN",47.9,"Hello World!"))
+	end
 end

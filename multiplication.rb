@@ -1,11 +1,32 @@
-def multiply(num1, num2)
-
-	error = "Please enter 2 NUMBERS! and try again"
-
-	if num1.class == String || num2.class == String
-		error
-	else
-		product = num1 * num2
+def multiply(*terms)
+	flag_all_numeric = false
+	flag_all_strings = false
+	terms.each do |num|
+		if num.class <= Numeric
+			flag_all_numeric = true
+		else
+			flag_all_numeric = false
+			break
+		end
 	end
-	
+
+	terms.each do |my_string|
+		if my_string.class == String
+			flag_all_strings = true
+		else
+			flag_all_strings = false
+			break
+		end
+	end
+
+	if flag_all_numeric == true
+		total = 1
+		terms.each do |num|
+			total *= num
+		end
+		return total
+	else
+		return "Error"
+	end
+
 end

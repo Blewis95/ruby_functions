@@ -15,10 +15,26 @@ class TestMultiplication < Minitest::Test
 	end
 
 	def test_string_multiplication
-		assert_equal("Please enter 2 NUMBERS! and try again",multiply("Hello ", "World"))
+		assert_equal("Error",multiply("Hello ", "World"))
 	end
 
 	def test_negative_numbers
 		assert_equal(-40,multiply(10,-4))
+	end
+
+	def test_3_numbers
+		assert_equal(1,multiply(1,1,1))
+	end
+
+	def test_string_and_num
+		assert_equal("Error", multiply("Hello", 42))
+	end
+
+	def test_no_arguments_returns_error
+		assert_equal("Error", multiply())
+	end
+
+	def test_mixed_arguments_returns_error
+		assert_equal("Error", multiply(1,2,3,"GabeN",47.9,"Hello World!"))
 	end
 end
