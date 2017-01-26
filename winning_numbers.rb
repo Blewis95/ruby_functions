@@ -1,9 +1,14 @@
 def winning_numbers(num,array)
 
-	error_num = "Error first number must be a numeric"
+	error_num = "Error first entry must be a numeric"
+	error_array = "Error second entry must be an array"
 
-	if num.class != Numeric
+	if num.class != (Fixnum || Float)
 		return error_num
+
+	elsif array.class != Array
+		return error_array
+
 	else
 		answer = false
 
@@ -14,9 +19,13 @@ def winning_numbers(num,array)
 			else
 
 			answer = false
+
 		end
 	end
+
+	
+
+	end
 	return answer
-end
 end
 
