@@ -1,6 +1,8 @@
 require "minitest/autorun"
 require_relative "winning_numbers.rb"
 
+#finished
+
 class TestWinning_numbers < Minitest::Test
 	def test_winning_number_return_true
 		assert_equal(true,winning_numbers(5,[3,5,6,8,2]))
