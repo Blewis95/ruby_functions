@@ -22,9 +22,10 @@ def one_off(string1,string2)
 
 	if string1.length == string2.length
 
+		length = string1.length
 		holder = 0
 
-		for i in 0..3
+		for i in 0..length
 
 			holder = array1[i]
 			if holder == array2[i]
