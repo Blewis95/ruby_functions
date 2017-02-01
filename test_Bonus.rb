@@ -19,6 +19,10 @@ class TestBonus < Minitest::Test
 	end
 
 	def test_array_entries_not_fix_nums_returns_errors
-		assert_equal("Error, entries must be 4 digits", winning_array(1234, [1234, "Hello", '1234']))
+		assert_equal("Error, array entries must be Fixed 4 digit numbers", winning_array(1234, [1234, "Hello", '1234']))
+	end
+
+	def test_working_condition
+		assert_equal(['1235','1134'], winning_array(1234, [9999,5678,1235,1134,1344]))
 	end
 end
