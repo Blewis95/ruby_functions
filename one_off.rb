@@ -17,29 +17,34 @@ def one_off(string1,string2)
 		num2 = num2 / 10
 	end
 
-	#puts array1
-	#puts array2
+	# print array1
+	# print array2
 
 	if string1.length == string2.length
 
 		length = string1.length
-		holder = 0
+		counter = 0
 
-		for i in 0..length
+			for i in 0..(length + 1)
 
-			holder = array1[i]
-			if holder == array2[i]
-				t_or_f = true
 
-			elsif array2[i] == ((holder - 1) || (holder + 1))
-				t_or_f = true
+				holder1 = array1[i]
+				holder2 = array2[i]
 
-			else
-				t_or_f = false
-				break
-			end
 				
-		end
+				if holder1 == holder2
+					t_or_f = true
+				elsif (holder1 == (holder2 - 1)) || (holder1 == (holder2 + 1))
+					t_or_f = true
+					counter += 1
+				elsif counter > 2
+					t_or_f = false
+					break
+				else
+					t_or_f = false
+					break
+				end
+			end	
 
 	elsif (string1.length == 0 || string2.length == 0)
 		return "Error missing argument"

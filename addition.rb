@@ -1,31 +1,31 @@
 def add(*terms)
-	flag_all_numeric = false
-	flag_all_strings = false
+	all_nums = false
+	all_strings = false
 	terms.each do |num|
 		if num.class <= Numeric
-			flag_all_numeric = true
+			all_nums = true
 		else
-			flag_all_numeric = false
+			all_nums = false
 			break
 		end
 	end
 
 	terms.each do |my_string|
 		if my_string.class == String
-			flag_all_strings = true
+			all_strings = true
 		else
-			flag_all_strings = false
+			all_strings = false
 			break
 		end
 	end
 
-	if flag_all_numeric == true
+	if all_nums == true
 		sum = 0
 		terms.each do |num|
 			sum += num
 		end
 		return sum
-	elsif flag_all_strings == true
+	elsif all_strings == true
 		concat_string = ""
 		terms.each do |s|
 			concat_string += s

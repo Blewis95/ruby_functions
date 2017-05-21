@@ -20,7 +20,7 @@ class Testoneoff < Minitest::Test
 	end
 
 	def test_more_than_four_numbers_works
-		assert_equal(true, one_off('1234567890', '1234567890'))
+		assert_equal(true, one_off('1234567890', '1234567891'))
 	end
 
 	def test_empty_parameter_returns_error
